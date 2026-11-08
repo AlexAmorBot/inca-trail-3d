@@ -43,34 +43,11 @@ The tour page is a Mapbox GL JS flyover. Scrolling moves the camera along the re
 
 Mapbox and OpenStreetMap attribution stay visible on the map.
 
-## Add the Mapbox token
+## Mapbox token
 
-The map will not draw until a public token is set. Open this file and paste the token between the quotes:
-
-`3dtour/mapbox-token.js`
-
-```javascript
-window.MAPBOX_PUBLIC_TOKEN = "pk.your-public-token";
-```
-
-1. In the [Mapbox access-token dashboard](https://account.mapbox.com/access-tokens/), create a public token. It starts with `pk.`.
-2. The token must be allowed to use the terrain style above. A token from the style owner's account can. A token from another account cannot, unless that style is public or has been copied into the new account.
-3. Restrict the token URL to `https://alexamorbot.github.io/inca-trail-3d`. The tour page sends the full page URL as the referrer. Chrome's default sends only `https://alexamorbot.github.io`, and that origin gets a 403 against a path restriction.
-4. Commit the file and push to `main`. GitHub Pages republishes from that branch.
-
-Do not commit a secret token (`sk.`). A public `pk.` token is visible in the browser. The URL restriction is what stops it from being reused on another site.
+The public token is in `3dtour/mapbox-token.js`. It is visible in the browser on purpose. Do not put a secret token (`sk.`) in this repo.
 
 If the token is missing, the tour page shows a short notice in place of the map. The rest of the site still works.
-
-## Preview locally
-
-```bash
-python3 -m http.server 8765
-```
-
-Open http://127.0.0.1:8765/
-
-Menu and canonical links use the live Pages URL, so those clicks leave the local server and open the published site.
 
 ## Layout
 
