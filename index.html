@@ -15,18 +15,14 @@
     <style>
         .hero-split {
             display: flex;
-            flex-wrap: wrap;
-            align-items: center;
             justify-content: center;
-            gap: 2rem;
-            max-width: 1200px;
+            max-width: 760px;
             margin: 0 auto;
-            text-align: left;
+            text-align: center;
             position: relative;
-            z-index: 2; 
+            z-index: 2;
         }
-        .hero-video { flex: 1; min-width: 300px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border-radius: 8px; overflow: hidden;}
-        .hero-text { flex: 1; min-width: 300px; color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.7); }
+        .hero-text { color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.7); }
         
         .stat-grid {
             display: grid;
@@ -62,7 +58,7 @@
         <nav>
             <ul class="nav-menu">
                 <li><a href="https://alexamorbot.github.io/inca-trail-3d/" class="active">Home</a></li>
-                <li><a href="https://alexamorbot.github.io/inca-trail-3d/3dtour/">Interative Tour</a></li>
+                <li><a href="https://alexamorbot.github.io/inca-trail-3d/3dtour/">Interactive Tour</a></li>
                 <li><a href="https://alexamorbot.github.io/inca-trail-3d/how-to-reserve-inca-trail/">Reserve Trek</a></li>
             </ul>
         </nav>
@@ -71,15 +67,10 @@
 
 <section class="hero" style="background-image: url('./images/machu-pichu-may-2012-523-2000x1333.jpg'); padding: 6rem 20px;">
     <div class="hero-split">
-        <div class="hero-video">
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/DlLyzYYtbSE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </div>
         <div class="hero-text">
             <h1>3D Inca Trail Tour</h1>
             <p style="font-size: 1.25rem; margin-bottom: 1.5rem;">3D Animated Tour of Peru's Famous Inca Trail. Experience The Wonders of The Inca Trail & Discover Many Ancient Ruins Along The Path.</p>
-            <hr style="width: 50px; border: 2px solid var(--secondary); margin-bottom: 1.5rem;">
+            <hr style="width: 50px; border: 2px solid var(--secondary); margin: 0 auto 1.5rem;">
             <a href="https://alexamorbot.github.io/inca-trail-3d/3dtour/" class="btn" style="background: var(--secondary); color: #000; font-size: 1.1rem;">ENTER TOUR NOW</a>
         </div>
     </div>
