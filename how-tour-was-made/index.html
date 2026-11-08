@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to make a MapBox interactive tour - IncaTrail</title>
+    <meta name="description" content="Discover how Inca Trail 3D Trek was created with MapBox to produce an interactive web tour.">
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="../icons/apple-touch-icon.png">
+    <link rel="shortcut icon" href="../icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon-32x32.png">
+    <link rel="manifest" href="../icons/site.webmanifest">
+    <style>
+        .special-thanks-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .special-thanks-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <a href="https://alexamorbot.github.io/inca-trail-3d/" class="logo">Inca Trail 3D</a>
+        
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="https://alexamorbot.github.io/inca-trail-3d/" class="active">Home</a></li>
+                <li><a href="https://alexamorbot.github.io/inca-trail-3d/3dtour/">Interative Tour</a></li>
+                <li><a href="https://alexamorbot.github.io/inca-trail-3d/how-to-reserve-inca-trail/">Reserve Trek</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <section class="hero" style="background-image: url('../images/mapbox-image-1646x769.jpg'); min-height: 60vh;">
+        <div class="hero-content">
+            <span style="font-size: 1.2rem; display: block; margin-bottom: 10px; font-weight: 300;">How to make an interactive MapBox web visual</span>
+            <h1>Learn How 3D Inca Tour Was Made with MapBox, GPS, and Web Tech</h1>
+            
+            <div style="margin-top: 2rem;">
+                <a href="https://alexamorbot.github.io/inca-trail-3d/3dtour/" class="btn" style="background-color: var(--secondary); color: black;">ENTER 3D INCA TRAIL</a>
+                <br>
+                <a href="https://alexamorbot.github.io/inca-trail-3d/" style="color: white; text-decoration: underline; margin-top: 15px; display: inline-block;">Return Home</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>Making a Web Visualization of Inca Trail</h2>
+            <p>The Inca Trail 3d interactive tour is a map-based website that can be used to view the Inca Trail in a guided three dimensional experience. This article will show how a 3D interactive tour of the Inca Trail was created using MapboxGL JS & Mapbox Studio, and how it can be used as an educational tool for people to learn about this historical site.</p>
+        </div>
+    </section>
+
+    <section class="section-alt">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h5 style="color: var(--secondary); text-transform: uppercase;">How Inca Trail to Machu Picchu was developed</h5>
+                <h2>1. APIs and Libraries used:</h2>
+                <hr style="width: 50px; border: 2px solid var(--primary); margin: 10px auto;">
+            </div>
+
+            <div class="card" style="text-align: left; margin-bottom: 2rem;">
+                <h3>1.1 MapboxGL Js & Mapbox Studio:</h3>
+                <p>MapboxGL Js is a Javascript library for developing full interactive web maps. It is very powerful, flexible and easy to use. We used the latest MapboxGL Js version (2.7.0) which can be found here: <a href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js" target="_blank" style="color: var(--primary);">https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js</a></p>
+                
+                <p>We began our script by setting GeoJson variables directly in our page, one for the trail (blue line), another for waypoints (blue circles) and another for tracking taken trails (blue line on top-right map -also developed using MapboxGL Js-).</p>
+
+                <p>The next step was to setup and center our first main 3D map and second top-right 2D map to fit precisely the trail bounds, with perfect coordinates<sup>[1]</sup>, bearing<sup>[2]</sup>, pitch<sup>[3]</sup> and zoom<sup>[4]</sup>.</p>
+
+                <p>Our first main 3D map needed to look the closest to reality (as if we looked from above Inca Trail in real world). We used Mapbox Studio to create a new 3D base map by activating 3D terrain feature<sup>[5]</sup> which provides high-quality Digital Elevation Model -acquired by Mapbox from satellite data-, we then used satellite imagery as a base layer for our base map.</p>
+
+                <p>Mapbox Studio allows to edit satellite imagery layer, so we adjusted furthermore color contrast and luminosity. We used a ready set dark map style (dark-v10) by Mapbox for the second top-right map: <a href="https://www.mapbox.com/maps/dark" target="_blank" style="color: var(--primary);">https://www.mapbox.com/maps/dark</a></p>
+
+                <p>Also, we thought that adding sky and fog to our 3D map is a good idea, giving it a more realistic impression, so we added a sky<sup>[6]</sup> layer which is included in Mapbox layers styles. We also added fog using <a href="https://docs.mapbox.com/mapbox-gl-js/api/map/#map" target="_blank" style="color: var(--primary);">setFog</a> with [-1, 1.5] as a range, white as color and 0.1 as horizon-blend.</p>
+
+                <p>We used <a href="https://docs.mapbox.com/mapbox-gl-js/api/map/#map" target="_blank" style="color: var(--primary);">AddSource</a> and <a href="https://docs.mapbox.com/mapbox-gl-js/api/map/#map" target="_blank" style="color: var(--primary);">AddLayer</a> to add our previously declared GeoJson data to both maps.</p>
+                
+                <div style="background: #f9f9f9; padding: 1rem; margin-top: 1rem; font-size: 0.9rem; border-left: 3px solid #ccc;">
+                    <ul style="list-style: none;">
+                        <li><strong>1.</strong> https://docs.mapbox.com/help/glossary/camera/#center</li>
+                        <li><strong>2.</strong> https://docs.mapbox.com/help/glossary/camera/#bearing</li>
+                        <li><strong>3.</strong> https://docs.mapbox.com/help/glossary/camera/#pitch</li>
+                        <li><strong>4.</strong> https://docs.mapbox.com/help/glossary/camera/#zoom</li>
+                        <li><strong>5.</strong> https://docs.mapbox.com/data/tilesets/reference/mapbox-terrain-v2/</li>
+                        <li><strong>6.</strong> https://docs.mapbox.com/mapbox-gl-js/style-spec/layers/#sky</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card" style="text-align: left; margin-bottom: 2rem;">
+                <h3>1.2 TurfJs:</h3>
+                <p>We did only use TurfJs (version 6) for one small function which is to define the bounding box of Geojson Inca trail layer in order to determine the fitting bounds of the second map. We used <a href="https://www.npmjs.com/package/turf-linestring" target="_blank" style="color: var(--primary);">lineString</a>, <a href="https://www.npmjs.com/package/@turf/bbox" target="_blank" style="color: var(--primary);">bbox</a> and <a href="https://docs.mapbox.com/mapbox-gl-js/api/map/#map" target="_blank" style="color: var(--primary);">fitBounds</a> (with a padding value of 15 for this latter).</p>
+            </div>
+
+            <div class="card" style="text-align: left;">
+                <h3>1.3 JQuery-Confirm:</h3>
+                <p>We used JQuery-Confirm (3.3.4) to display left panels with opening/closing animation, and also because it is more handy since it allows declaring dialog variables with many options such as closeIcon<sup>[7]</sup>, theme<sup>[8]</sup>, title<sup>[9]</sup>, bgOpacity<sup>[10]</sup>, container<sup>[11]</sup> and animationSpeed<sup>[12]</sup>. We needed to edit the CSS in order to get automatically a ready setup left panel.</p>
+
+                 <div style="background: #f9f9f9; padding: 1rem; margin-top: 1rem; font-size: 0.9rem; border-left: 3px solid #ccc;">
+                    <ul style="list-style: none;">
+                        <li><strong>7.</strong> https://craftpip.github.io/jquery-confirm/#close-icon</li>
+                        <li><strong>8.</strong> https://craftpip.github.io/jquery-confirm/themes.htm</li>
+                        <li><strong>9.</strong> https://craftpip.github.io/jquery-confirm/#options</li>
+                        <li><strong>10-12.</strong> https://craftpip.github.io/jquery-confirm/#options</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h5 style="color: var(--secondary); text-transform: uppercase;">How Inca Trail to Machu Picchu was developed</h5>
+                <h2>2. Two maps in action:</h2>
+                <hr style="width: 50px; border: 2px solid var(--primary); margin: 10px auto;">
+            </div>
+
+            <p>The first 3D map starts with a smooth fly fitting it to the Inca trail extents with a bearing of -107 degree, a pitch of 42 and a zoom of 11.8, centering it to -72.44323932240363 longitude and -13.219968529326835 latitude. The second map starts with fitting the bounds of the Inca trails using fitBounds as previously mentioned.</p>
+            <p>We decided to let user choose between scrolling up/down or clicking up/down arrows to fly between Inca trail waypoints, starting from Piskacucho to Machu Picchu:</p>
+
+            <div class="card" style="text-align: left; margin-top: 2rem;">
+                <h3>2.1 Scrolling up/down using native JS:</h3>
+                <p>We used a simple <u>DIV</u> container which <strong>includes</strong>: the first 3D map div, another <u>DIV</u> container with a scroll overflow <strong>containing</strong> a div with a height of 1000vh, the second map div with a fixed position and the two arrow buttons with fixed position.</p>
+                <p>This allowed us to have a transparent scrollable div on the top of the main 3D map, with a fixed second map and the two arrow buttons. Their position is fixed in order not to disappear once scrolling.</p>
+                <p>We added an event listener when scrolling up or down using <a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener" target="_blank" style="color: var(--primary);">addEventListener(‘scroll’)</a> calling a function that records each frame scrolled and either it was scrolled up or down.</p>
+            </div>
+
+            <div class="card" style="text-align: left; margin-top: 2rem;">
+                <h3>2.2 “Steps” notion and how did we find the best view angle to each waypoint:</h3>
+                <p>Each waypoint was attributed a step number, Piskacucho was given step number 1, Patallacta was given step number 2 etc.. So we could easily start writing conditions as follows: If user scrolls down and step variable is 0, then the map needs to <a href="https://docs.mapbox.com/mapbox-gl-js/api/map/#map" target="_blank" style="color: var(--primary);">flyTo</a> step number 1 which is Piskacucho. Once the map stops moving (meaning that user reached Piskacucho) the step variable needs to be changed to 1. We used for this <a href="https://docs.mapbox.com/mapbox-gl-js/api/map/#map.event:moveend" target="_blank" style="color: var(--primary);">map.on('moveend')</a> event that fires once a move action stops. We also needed to disable the scrolling event listener once it has been fired, then enable it again once the move action stops in order to prevent flying instantly to two or more waypoints.</p>
+                <p>Also, we used <a href="https://docs.mapbox.com/mapbox-gl-js/api/map/#map.event:move" target="_blank" style="color: var(--primary);">map.on('move')</a> event listener to fire a console.log containing actual map moving info such as zoom, bearing, pitch and centered coordinates. This was done in order to get these data while moving manually around waypoints finding the best view angle, once done, we could easily get all info in the Browser developer console log.</p>
+                <p>We disabled this developer function once we were done, we also disabled map interaction<sup>[13]</sup> to prevent panning and zooming by user.</p>
+                
+                <div style="background: #f9f9f9; padding: 1rem; margin-top: 1rem; font-size: 0.9rem; border-left: 3px solid #ccc;">
+                    <strong>13.</strong> https://docs.mapbox.com/mapbox-gl-js/example/interactive-false/
+                </div>
+            </div>
+
+            <div class="card" style="text-align: left; margin-top: 2rem;">
+                <h3>2.3 Trail tracking on second map:</h3>
+                <p>The second map helps users locating themselves on this 3D visualization. We used [case, Boolean, feature-state]<sup>[14]</sup> expression for line-opacity of Inca trail layer in order to tell the second map to show or hide a feature on a given moment: Opacity set to 0 or 1.</p>
+                <p>Using <a href="https://docs.mapbox.com/mapbox-gl-js/api/map/#map.event:moveend" target="_blank" style="color: var(--primary);">map.on('moveend')</a>, each step had a different <a href="https://docs.mapbox.com/mapbox-gl-js/api/map/#map" target="_blank" style="color: var(--primary);">setFeatureState</a> which sets a Boolean state to our second map trail layer source.</p>
+                <p>For example once the user reaches step number 3 when scrolling down, the second map is told to show the line feature number 2 (because each line has two endpoints, so the line feature number 1 connects waypoint steps 1 & 2, and line feature number 2 connects waypoint steps 2 & 3, so we need to show to user that he crossed the second line and that he reached the third step or third waypoint). The Inca trail Geojson was cut into features prior to this using QGIS 3.18 then re-exported to Geojson format.</p>
+                <p>Also, if user reaches step number 3 while scrolling up (meaning backward), the second map is told to hide line feature number 3.</p>
+
+                <div style="background: #f9f9f9; padding: 1rem; margin-top: 1rem; font-size: 0.9rem; border-left: 3px solid #ccc;">
+                    <strong>14.</strong> https://docs.mapbox.com/mapbox-gl-js/style-spec/expressions/
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section class="section-alt">
+        <div class="container">
+            <h2>Special Thanks To</h2>
+            
+            <div class="special-thanks-wrapper">
+                
+                <div class="special-thanks-card">
+                    <img src="../images/developer-100x100.jpg" alt="Noufel - Site Developer" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem;">
+                    <h3>Noufel</h3>
+                    <h4 style="color: #666; font-size: 1rem; margin-bottom: 1rem;">Developer</h4>
+                    <a href="https://www.upwork.com/freelancers/~01c8d97cbedc774bd7" target="_blank" class="btn" style="font-size: 0.9rem; padding: 8px 16px;">Upwork Profile</a>
+                </div>
+
+                <div class="special-thanks-card">
+                    <img src="../images/inca-trail-how-it-was-made-gsp-960x720.jpeg" alt="Site Creators" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 1rem;">
+                    <div style="text-align: left;">
+                        <h3 style="text-align: center;">About the creators</h3>
+                        <p>IncaTrail.Vacation is the creation of Alex Amor from his adventures on the trail in 2012. The data was captured with a Garmin handheld GPS and primary imagery was provided from Trek team members, with supplementary imagery sourced from Shutterstock.</p>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div style="text-align: center; margin-top: 4rem;">
+                <img src="../images/inca-trail-logo-2680x1698.png" alt="Inca Trail 3D Logo" style="max-width: 350px;">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p class="mbr-text fLink mbr-regular mbr-black">
+                <a href="https://alexamorbot.github.io/inca-trail-3d/">Home</a> | 
+                <a href="https://alexamorbot.github.io/inca-trail-3d/3dtour/">3D Inca Trail Tour</a> | 
+                <a href="https://alexamorbot.github.io/inca-trail-3d/how-tour-was-made/">How 3D Tour Was Made</a> | 
+                <a href="https://alexamorbot.github.io/inca-trail-3d/how-to-reserve-inca-trail/">How to Reserve Inca Trail</a>
+            </p>
+            <div class="copyright">
+                <p>
+                    &copy; Copyright <span><script>document.write(new Date().getFullYear())</script> Inca Trail 3D</span> - All Rights Reserved - 
+                    <a href="https://alexamorbot.github.io/inca-trail-3d/terms/">Terms & Privacy</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+<script>
+    const menuToggle = document.getElementById('mobile-menu');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', function() {
+            menuToggle.classList.toggle('is-active');
+            navMenu.classList.toggle('active');
+        });
+    }
+</script>
+</body>
+</html>

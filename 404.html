@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png">
+    <link rel="shortcut icon" href="./icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32x32.png">
+    <link rel="manifest" href="./icons/site.webmanifest">
+    <style>
+        .error-container {
+            text-align: center;
+            padding: 4rem 20px;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .error-code {
+            font-size: 6rem;
+            font-weight: 800;
+            color: var(--secondary);
+            margin: 0;
+            line-height: 1;
+        }
+        .error-message {
+            font-size: 1.5rem;
+            margin: 1rem 0 2rem 0;
+            color: var(--dark);
+        }
+        .error-subtext {
+            color: #666;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <a href="https://alexamorbot.github.io/inca-trail-3d/" class="logo">Inca Trail 3D</a>
+        
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="https://alexamorbot.github.io/inca-trail-3d/" class="active">Home</a></li>
+                <li><a href="https://alexamorbot.github.io/inca-trail-3d/3dtour/">Interative Tour</a></li>
+                <li><a href="https://alexamorbot.github.io/inca-trail-3d/how-to-reserve-inca-trail/">Reserve Trek</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <section class="error-container">
+        <h1 class="error-code">404</h1>
+        <h2 class="error-message">The page you are seeking is not here</h2>
+        <p class="error-subtext">The page you are seeking vanished or may have never existed.</p>
+        
+        <img src="./images/inca-trail-logo-2680x1698.png" alt="Inca Trail 3D Logo" style="max-width: 300px; margin-bottom: 2rem;">
+        
+        <a href="https://alexamorbot.github.io/inca-trail-3d/" class="btn">Return to Home Page</a>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p class="mbr-text fLink mbr-regular mbr-black">
+                <a href="https://alexamorbot.github.io/inca-trail-3d/">Home</a> | 
+                <a href="https://alexamorbot.github.io/inca-trail-3d/3dtour/">3D Inca Trail Tour</a> | 
+                <a href="https://alexamorbot.github.io/inca-trail-3d/how-tour-was-made/">How 3D Tour Was Made</a> | 
+                <a href="https://alexamorbot.github.io/inca-trail-3d/how-to-reserve-inca-trail/">How to Reserve Inca Trail</a>
+            </p>
+            <div class="copyright">
+                <p>
+                    &copy; Copyright <span><script>document.write(new Date().getFullYear())</script> Inca Trail 3D</span> - All Rights Reserved
+                </p>
+            </div>
+        </div>
+    </footer>
+<script>
+    const menuToggle = document.getElementById('mobile-menu');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', function() {
+            menuToggle.classList.toggle('is-active');
+            navMenu.classList.toggle('active');
+        });
+    }
+</script>
+</body>
+</html>

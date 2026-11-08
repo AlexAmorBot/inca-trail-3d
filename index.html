@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Inca Trail Tour - 4/5 Day Trek To Machu Picchu</title>
+    <meta name="description" content="Animated 3D Virtual Tour of the Peru Inca Trail to Machu Picchu. Experience the famous mountain trail from a virtual tour.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+    <link rel="shortcut icon" href="icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="manifest" href="icons/site.webmanifest">
+    
+    <style>
+        .hero-split {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: left;
+            position: relative;
+            z-index: 2; 
+        }
+        .hero-video { flex: 1; min-width: 300px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border-radius: 8px; overflow: hidden;}
+        .hero-text { flex: 1; min-width: 300px; color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.7); }
+        
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 2rem;
+        }
+        .stat-card {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border-bottom: 3px solid var(--secondary);
+        }
+        
+        /* Provider Card Icons */
+        .provider-icon svg { width: 40px; height: 40px; fill: var(--secondary); margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <a href="https://alexamorbot.github.io/inca-trail-3d/" class="logo">Inca Trail 3D</a>
+        
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="https://alexamorbot.github.io/inca-trail-3d/" class="active">Home</a></li>
+                <li><a href="https://alexamorbot.github.io/inca-trail-3d/3dtour/">Interative Tour</a></li>
+                <li><a href="https://alexamorbot.github.io/inca-trail-3d/how-to-reserve-inca-trail/">Reserve Trek</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero" style="background-image: url('./images/machu-pichu-may-2012-523-2000x1333.jpg'); padding: 6rem 20px;">
+    <div class="hero-split">
+        <div class="hero-video">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/DlLyzYYtbSE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="hero-text">
+            <h1>3D Inca Trail Tour</h1>
+            <p style="font-size: 1.25rem; margin-bottom: 1.5rem;">3D Animated Tour of Peru's Famous Inca Trail. Experience The Wonders of The Inca Trail & Discover Many Ancient Ruins Along The Path.</p>
+            <hr style="width: 50px; border: 2px solid var(--secondary); margin-bottom: 1.5rem;">
+            <a href="https://alexamorbot.github.io/inca-trail-3d/3dtour/" class="btn" style="background: var(--secondary); color: #000; font-size: 1.1rem;">ENTER TOUR NOW</a>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="grid-3 grid-split-2-1">
+            <div>
+                <h2>Discover 4/5 Day Inca Trail Tour</h2>
+                <h3 style="text-align: center; color: #666; margin-top: -1rem;">Hike Original Paved Inca Trail to Machu Picchu</h3>
+            </div>
+            <div style="background: #f8f9fa; padding: 2rem; border-left: 4px solid var(--primary); font-style: italic;">
+                The Inca Trail, or Inka Trail, is a famous ancient path used by the Royal Incan leaders to get to Machu Picchu. Follow in the path of the ancient - Hike from the valleys and rivers to the mountain tops and cliff edges - And discover hidden ruins and other trail secrets along the journey that both challenge and inspire. The Inca Trail Trek will leave you with memories for a lifetime.
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="padding-top: 0;">
+    <div class="container">
+        <div class="grid-3">
+            <div class="card">
+                <img src="./images/llama-sm-458x305.jpg" alt="Llama on trail">
+            </div>
+            <div class="card">
+                <img src="./images/phuyupatamarca-458x344.jpg" alt="Phuyupatamarca">
+            </div>
+            <div class="card">
+                <img src="./images/inca-trail-path-sm-524x350.jpg" alt="Trail Path">
+            </div>
+        </div>
+        <div style="text-align: center; max-width: 800px; margin: 3rem auto 0;">
+            <h2>Nature - History - Experience</h2>
+            <p>The Inca Trail perfectly blends the majestic beauty of the Andes Mountains into the rich ancient history of the Inca people. Learn how the Incas used the trail and their harmony with nature. See water flow through built-in irrigation channels and share the trail with the many Llamas who call this area home. Experience mountain passes to high-mountain rain-forests, and keep your eyes open for rare Andes animals along the trail.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section-alt">
+    <div class="container">
+        <h2>Inca Trail Elevation & Distance</h2>
+        <div class="grid-3 grid-split-1-1">
+            <div>
+                <p>The Inca Trail spans approximately 26 miles (42 kilometers) of rugged terrain, winding its way through diverse ecosystems and archaeological wonders. As you ascend from the Sacred Valley to the majestic heights of Machu Picchu, you'll encounter dramatic changes in elevation, ranging from around 8,000 feet (2,438 meters) to over 13,800 feet (4,200 meters) above sea level.</p>
+            </div>
+            <div>
+                <p>The graphic above is the elevation profile of the Inca Trail. The graph was meticulously crafted based on precise GPS data gathered firsthand and represents an accurate account for what you will experience along the trail. Prepare for the challenges and excitement that lies ahead. Download the Inca Trail GPS Route .kmz file used to create this site to view the Inca Trail in Google Earth.</p>
+                <p>File Download: <a href="https://alexamorbot.github.io/inca-trail-3d/data/Inca_Trail_GPS_Route.kmz" download style="color: var(--primary); font-weight: bold; text-decoration: underline;">Inca_Trail_GPS_Route.kmz</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2>Elevation of Ruins & Trek Highlights</h2>
+        <img src="./images/inca-trail-profile-1750x669.jpg" alt="Elevation Profile" style="width: 100%; border-radius: 8px; margin-bottom: 2rem;">
+        <div class="stat-grid">
+            <div class="stat-card"><strong>Llactapata</strong><br>9,000 ft (2,743m)</div>
+            <div class="stat-card"><strong>Wayllabamba (Camp 1)</strong><br>9,650 ft (2,941m)</div>
+            <div class="stat-card"><strong>Warmiwañusqa</strong><br>13,800 ft (4,206m)</div>
+            <div class="stat-card"><strong>Pakaymayu (Camp 2)</strong><br>11,781 ft (3,590m)</div>
+            <div class="stat-card"><strong>Runkuracay Pass</strong><br>12,936 ft (3,942m)</div>
+            <div class="stat-card"><strong>Sayacmarca</strong><br>11,852 ft (3,612m)</div>
+            <div class="stat-card"><strong>Puyupatamarca</strong><br>11,812 ft (3,600m)</div>
+            <div class="stat-card"><strong>Wiñayhuayna (Camp 3)</strong><br>8,812 ft (2,685m)</div>
+            <div class="stat-card"><strong>Inti Punku (Sun Gate)</strong><br>8,720 ft (2,657m)</div>
+            <div class="stat-card"><strong>Machu Picchu</strong><br>8,089 ft (2,465m)</div>
+            <div class="stat-card"><strong>Huayna Picchu</strong><br>8,642 ft (2,634m)</div>
+        </div>
+    </div>
+</section>
+
+<section class="section-alt">
+    <div class="container">
+        <h2>Inca Trail 4 Day Tour Itinerary</h2>
+        <p style="text-align: center; margin-bottom: 3rem;">The Classic 4 Day Trail - From Ollantaytambo to Machu Picchu</p>
+        
+        <div class="timeline-item">
+            <div class="timeline-img">
+                <img src="./images/trail-entrance-600x367.jpg" alt="Start Sign">
+            </div>
+            <div class="timeline-content">
+                <span class="timeline-date">Inca Trail Day 1</span>
+                <h3>Start The Inca Trek</h3>
+                <p>The 4 Day Inca Trail Trek starts with exploring the town of Ollantaytambo. From here you will cross the bridge and officially start the Inca Trail hike. The remainder of the day is a hike along a river to the ruins of Patallaqta and then on to Camp 1 at Wayllabamba.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-img">
+                <img src="./images/deadwomanspass-sm-600x600.jpg" alt="Dead Womans Pass">
+            </div>
+            <div class="timeline-content">
+                <span class="timeline-date">Inca Trail Day 2</span>
+                <h3>Ascend Into The Mountains</h3>
+                <p>Start day 2 by hiking up to the highest point of the trek - Dead Womans Pass at almost 14,000 ft. Hike along waterfalls and up into the high mountain pass where you are rewarded with endless views of the valley. Finish the day hiking down to your camp in the clouds.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-img">
+                <img src="./images/original-trails-600x600.jpg" alt="Original Trails">
+            </div>
+            <div class="timeline-content">
+                <span class="timeline-date">Inca Trail Day 3</span>
+                <h3>Hike Ancient Trails</h3>
+                <p>Following in the path of the Incas - Day 3 includes original Inca Trail paved stone, hidden ruins, and some of the best vistas along the trail. Experience the original paved trail and secret Inca ruins that line the trail leading up to Machu Picchu.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-img">
+                <img src="./images/entermachupicchu-sm-415x600.jpg" alt="Machu Picchu View">
+            </div>
+            <div class="timeline-content">
+                <span class="timeline-date">Inca Trail Day 4</span>
+                <h3>Enter Machu Picchu</h3>
+                <p>Wake up before sunrise and trek (in the dark) to the Sun Gate for amazing views of the Incan citadel. Enter Machu Picchu from above as the Royal Inca people did - the final hike into Machu Picchu from the Sun Gate is a perfect ending to the 4 day trek and experience to remember forever.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2>Book Your Inca Trail Tour</h2>
+        <p style="text-align: center;">Check out our TOP 3 Tour Providers</p>
+        
+        <div class="grid-3">
+            <div class="card">
+                <div class="provider-icon">
+                    <svg viewBox="0 0 1792 1792"><path d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z"></path></svg>
+                </div>
+                <h3>G Adventures</h3>
+                <p>Known for Award Winning Inca Trail Programs - G Adventures offers complete end-to-end tour packages. Take the worries away from planning and enjoy the trip.</p>
+                <a href="https://www.dpbolvw.net/click-100686863-11555299?url=https%3A%2F%2Fwww.gadventures.com%2Fsearch%2F%3Fq%3Dinca%2Btrail%26ref%3Dnavsearch" class="btn">View G Adventures</a>
+            </div>
+            
+            <div class="card">
+                <div class="provider-icon">
+                     <svg viewBox="0 0 1792 1792"><path d="M1201 1004l306-297-422-62-189-382-189 382-422 62 306 297-73 421 378-199 377 199zm527-357q0 22-26 48l-363 354 86 500q1 7 1 20 0 50-41 50-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z"></path></svg>
+                </div>
+                <h3>Get Your Guide</h3>
+                <p>Find custom Inca Trail Tour packages at Get Your Guide. Discover tours from private operators and avoid the crowds with personalized, private, and small-group tour options.</p>
+                <a href="https://www.getyourguide.com/s/?q=Inca%20Trail&searchSource=7&partner_id=AZL90KN&utm_medium=online_publisher&placement=button-cta" class="btn">View GetYourGuide Tours</a>
+            </div>
+            
+            <div class="card">
+                <div class="provider-icon">
+                    <svg viewBox="0 0 1792 1792"><path d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z"></path></svg>
+                </div>
+                <h3>Trip Advisor</h3>
+                <p>Plan your Inca Trail trek, read about recent experiences & tour reviews, and book hotels/accommodations. Plan the trip from Lima to Cusco to Aguas Calientes with Trip Advisor.</p>
+                <a href="https://tripadvisor.tp.st/IY5j6Nx1" class="btn">Inca Trail at TripAdvisor</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-alt">
+    <div class="container">
+        <h2>Inca Trail Image Gallery</h2>
+        <div class="grid-3">
+            <div class="card"><img src="./images/llactapata-849x566.jpeg" alt="Llactapata"><p>Llactapata</p></div>
+            <div class="card"><img src="./images/3-deadwomanpass-849x566.jpeg" alt="Pass"><p>Warmiwañusqa Pass</p></div>
+            <div class="card"><img src="./images/5-runkurakay-849x567.jpeg" alt="Runkuracay"><p>Runkuracay Pass</p></div>
+            <div class="card"><img src="./images/sayacmarca-849x637.jpeg" alt="Sayacmarca"><p>Sayacmarca</p></div>
+            <div class="card"><img src="./images/trailtomachupicchu-849x1274.jpeg" alt="Trail"><p>Trail To Machu Picchu</p></div>
+            <div class="card"><img src="./images/phuyupatamarca-849x637.jpeg" alt="Phuyupatamarca"><p>Phuyupatamarca</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="grid-3 grid-split-1-1-center">
+            <div style="position: relative;">
+                <img src="./images/18-huayna-picchu-600x400.jpg" alt="Huayna Picchu" style="width: 100%; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                <img src="./images/13-sungate-600x400.jpg" alt="Sun Gate" style="width: 80%; position: absolute; bottom: -30px; right: -20px; border: 5px solid white; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+            </div>
+            
+            <div style="padding-left: 2rem; padding-top: 2rem;">
+                <h2 style="text-align: left;">How 3D Inca Tour<br>WAS MADE</h2>
+                <p>Learn more about how the 3D Inca Trail was created - from plotting the trail on-location with GPS to digitally mapping the trek with technology - Inca Trail 3D Tour is a unique animated visualization of the famous 4 Day Inca Trail from Ollantaytambo to Machu Picchu.</p>
+                <p>Find out how the data was collected, techniques and mapping technology used to create this experience, and learn more about the people behind the site.</p>
+                <a href="https://alexamorbot.github.io/inca-trail-3d/how-tour-was-made/" class="btn">READ MORE</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p class="mbr-text fLink mbr-regular mbr-black">
+            <a href="https://alexamorbot.github.io/inca-trail-3d/">Home</a> | 
+            <a href="https://alexamorbot.github.io/inca-trail-3d/3dtour/">3D Inca Trail Tour</a> | 
+            <a href="https://alexamorbot.github.io/inca-trail-3d/how-tour-was-made/">How 3D Tour Was Made</a> | 
+            <a href="https://alexamorbot.github.io/inca-trail-3d/how-to-reserve-inca-trail/">How to Reserve Inca Trail</a>
+        </p>
+        <div class="copyright">
+            <p>
+                &copy; Copyright <span><script>document.write(new Date().getFullYear())</script> Inca Trail 3D</span> - All Rights Reserved - 
+                <a href="https://alexamorbot.github.io/inca-trail-3d/terms/">Terms & Privacy</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"WebSite",
+      "@id":"https://alexamorbot.github.io/inca-trail-3d/",
+      "name":"Inca Trail 3D 4 Day Virtual 3D Tour Website",
+      "image":["https://alexamorbot.github.io/inca-trail-3d/3dtour/img/8-daylunch3.jpg","https://alexamorbot.github.io/inca-trail-3d/3dtour/img/15-finalhike-rain.jpg"],
+      "url":"https://alexamorbot.github.io/inca-trail-3d/",
+      "description":"Inca Trail 3D animated tour of the Inca Trail to Machu Picchu with pictures and descriptions.",
+      "about":{
+        "@type":"Place",
+        "name":"Inca Trail to Machu Picchu",
+        "sameAs":["https://en.wikipedia.org/wiki/Inca_Trail_to_Machu_Picchu","https://www.inca-trail.com.pe/"]
+      }
+    },
+    {
+      "@type":"WebPage",
+      "@id":"https://alexamorbot.github.io/inca-trail-3d/#home",
+      "name":"Inca Trail 3D Tour Homepage",
+      "description":"Learn about the Inca Trail to Machu Picchu with information about daily activities, elevation profile, and pictures.",
+      "url":"https://alexamorbot.github.io/inca-trail-3d/",
+      "breadcrumb":{
+        "@type":"BreadcrumbList",
+        "itemListElement":[
+          {"@type":"ListItem","position":1,"name":"Inca Trail Home","item":"https://alexamorbot.github.io/inca-trail-3d/"}
+        ]
+      }
+    }
+  ]
+}
+</script>
+
+<script>
+    const menuToggle = document.getElementById('mobile-menu');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', function() {
+            menuToggle.classList.toggle('is-active');
+            navMenu.classList.toggle('active');
+        });
+    }
+</script>
+
+</body>
+</html>
